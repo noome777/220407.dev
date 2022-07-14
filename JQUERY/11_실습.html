@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>실습</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1>실습</h1>
+
+    <table border="1">
+        <tr>
+            <td>글번호</td>
+            <td>제목</td>
+            <td>작성자</td>
+            <td>작성일</td>
+            <td>조회수</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>제목01</td>
+            <td>작성자01</td>
+            <td>220708</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>제목02</td>
+            <td>작성자02</td>
+            <td>220708</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>제목03</td>
+            <td>작성자03</td>
+            <td>220708</td>
+            <td>8</td>
+        </tr>
+    </table>
+    
+    <script>
+        $(function(){
+            //table의 행 클릭하면, 해당 행의 글번호 콘솔에 출력
+            $('tr').click(function(){
+                // console.log($(this).children()[0].text());
+                //이거 안됨
+                const no = $(this).children().first().text();
+                if(no !== '글번호'){
+                        console.log(no);
+                }
+                
+                
+            });
+        });
+    </script>
+  
+</body>
+</html>

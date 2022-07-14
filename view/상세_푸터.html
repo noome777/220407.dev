@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        div{box-sizing: border-box; border: 1px solid red;}
+        #footer{width: 1000px; height: 150px;}
+        /*위 스타일은 가져가지 않을 거임*/
+        
+        #footer>div{width: 100%;}
+        #footer_1{height: 20%;}
+        #footer_2{height: 80%;}
+
+        #footer_2>p{
+            width: 100%;
+            /* border: 1px solid blue; */
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        #p1{height: 80%;}
+        #p2{height: 20%;}
+
+        #footer_1>a {
+            text-decoration: none;
+            color: gray;
+            font-weight: 900;
+            margin: 15px;
+            vertical-align: middle;
+           
+        }
+
+        #footer_2 {
+            /*글자 줄이기*/
+            font-size: 12px;
+            color: darkgrey;
+        }
+
+        #p2 {
+            text-align: center;
+        }
+
+        #p1{
+            padding: 5px 15px;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div id="footer">
+        <div id="footer_1">
+            <a href="">이용약관</a> |
+            <a href="">개인정보취급방침</a> |
+            <a href="">인재채용</a> |
+            <a href="">고객센터</a> 
+        </div>
+        <div id="footer_2">
+            <p id="p1">
+                강남지원 1관 : 서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F <br>
+
+                강남지원 2관 : 서울특별시 강남구 테헤란로10길 9 그랑프리 빌딩 4F, 5F, 7F
+                강남지원 3관 : 서울특별시 강남구 테헤란로 130 호산빌딩 5F, 6F
+                종로지원 : 서울특별시 중구 남대문로 120 대일빌딩 2F, 3F
+                당산지원 : 서울특별시 영등포구 선유동2로 57 이레빌딩 (구관) 19F, 20F
+            </p>
+            <p id="p2">
+                Copyright © 1998-2022 KH Information Educational Institute All Right Reserved
+            </p>
+        </div>
+    </div>
+</body>
+</html>

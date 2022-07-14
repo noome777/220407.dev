@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소탐색(순회)메소드_동위</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+    <h1>요소탐색(순회)메소드_동위</h1>
+
+    <div class="wrap">
+        <p>p태그임</p>
+        <span>span태그임</span>
+        <h2>나는h2</h2>
+        <br>
+        <h3>나는h3</h3>
+        <p>나도p태그</p>
+    </div>
+
+
+    <script>
+
+        $(function(){
+            //siblings() : 형제 선택자
+            // console.log($('h2').siblings());
+
+            //siblings("선택자") : 형제 중 선택자에 일치하는 요소 선택
+            // console.log($('h2').siblings('p'));
+
+            //next() | prev() : 바로 다음|이전 요소 하나
+            // console.log($('h2').next());
+            // console.log($('h2').prev());
+
+            //nextAll() | prevAll() : 다음|이전 요소 하나
+            // console.log($('h2').prevAll());
+
+            //nextUntil('선택자') | prevUntil() : 형제요소 중, 선택자까지 : 초과, 미만
+            // console.log($('h2').nextUntil('p'));
+            // console.log($('h2').prevUntil('p'));
+        })
+    </script>
+
+
+
+
+
+
+
+
+</body>
+</html>

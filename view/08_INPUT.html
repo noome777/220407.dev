@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>인풋태그</title>
+</head>
+<body>
+    
+    <h1>input 태그</h1>
+
+    <!--
+        type : text, password, number, range,
+                search, url, email, phone,
+                date, month, week, time, datetime_local,
+                radio, checkbox,
+                submit, reset
+                color
+                hidden
+                file
+                button
+                select - option, datalist
+        name -> EX) user01 클라이언트에서 서버쪽으로 데이터를 보낼 때 키와 값 형태로 데이터를 보내주는데 그 때 키값의 역할을 한다.
+        placeholder -> 미리보기 역할을 한다.
+        value -> EX) abc 사용자가 직접 넣은 값. 이게 name과 묶여서 서버 쪽으로 넘어가게 된다. user01 = abc
+        required -> 무조건 필수적으로 있어야 하는 값. 이게 있는데 박스를 채워주지 않으면 submit이 안됨.
+        size
+        maxlenght
+    -->
+
+    <hr>
+
+    <h2>회원가입</h2>
+    <br>
+    <form action="zzzz"><!-- form 태그 안에서는 input 위치 상관 ㄴㄴ-->
+        <label>   아이디 : </label>  <!-- 라벨태그는 스팬태그랑 비슷-->
+        <input type="text" name="id" placeholder="아이디를 입력하세요."> 
+        <br>
+        비밀번호 : 
+        <input type="password" size="50" placeholder="4자리 이상으로 만들어주세요.">
+        <br>
+        나이 : 
+        <input type="number" value="20" step="5" min="0" max="999">
+        <br>
+        공격력 : 
+        <input type="range" value="50" step="20" max="200">
+        <br>
+        <input type="submit">
+    </form>
+   
+
+    <hr>
+    <hr>
+    <hr>
+
+
+    <h2>search | url | email | tel 태그</h2>
+    <form action="safddfasdds">
+
+        검색 : <input type="search">
+        <br>
+        URL : <input type="url">
+        <br>
+        이메일 :<input type="email">
+        <br>
+        <input type="submit">
+        <br>
+        전화번호 : <input type="tel">
+        <br>
+    </form>
+   
+    <h2>날짜</h2>
+
+    <form action="ddd" method="get">
+        date 태그 : <input type="date" name="birth"><br>
+        month 태그 : <input type="month" name="m"><br>
+        week 태그: <input type="week" name="w"><br>
+        time 태그 : <input type="time" name="t"><br>
+        datetime_local 태그 : <input type="datetime-local" name="dl"><br>
+
+        <input type="submit">
+
+    </form>
+
+
+    <br><br><br>
+    <hr>
+    <br><br><br>
+
+    <h2>라디오 버튼</h2>
+
+    <pre>
+
+        라디오 버튼은 같은 name을 주어야 하나의 그룹으로 묶인다. 
+        라디오 버튼은 하나의 값만 선택하게 할 때 사용한다. (다중선택x)
+        기본 값으로 체크가 되어있게 하려면, checked 속성 부여
+        제출(submit)시, check 된 input 태그의 value 가 전달된다.
+        value 가 없으면, on 이라는 값으로 전달된다. 
+
+    </pre>
+
+    <form action="checkGender" method="get">
+        
+        <label for="male">남</label>
+        <input id="male" type="radio" name="gender" value="m"> 
+
+        <label for="female">여</label>
+        <input id="female" type="radio" name="gender" value="f">
+       
+        <label for="secret">비공개</label>
+        <input id="secret" type="radio" name="gender" value="s" checked>
+
+        <input type="submit">
+
+
+    </form>
+
+
+    <br><br><br>
+    <hr>
+    <br><br><br>
+
+    <h2>체크박스</h2>
+
+    <pre>
+        체크박스는, 다중선택을 할 때 사용한다. 
+        체크박스는 선택 시 해당 태그의 value 가 전달한다.
+        name 값은 똑같이 주면 된다. (어차피 전부 넘어간다.)
+        기본적으로 체크될 요소들을 지정할 수 있다. (checked)
+    </pre>
+
+
+    <form action="ccc" method="get">
+
+       <label for="apple">사과</label> 
+       <input type="checkbox" id="apple" value="a" name="fruit" checked>
+
+       <label for="banana">바나나</label>
+       <input type="checkbox" id="banana" value="b" name="fruit">
+
+       <label for="grape">포도</label>
+       <input type="checkbox" id="grape" value="g" name="fruit">
+       <br><br>
+       <input type="submit" value="전송">
+       <input type="reset">
+
+    </form>
+
+
+    <br><br><br>
+    <hr>
+    <br><br><br>
+
+    <h2>색상 선택 + hidden 태그</h2>
+
+    <pre>
+
+
+    </pre>
+
+    <form action="colorzzz" method="get">
+
+            <span>좋아하는 색 : </span>
+            <input type="color" name="c">
+            <br>
+            <input type="submit" value="제출하기">
+
+            <input type="hidden" name="h" value="vvv">
+            <!--
+                hidden 태그는 사용자에게 노출되지 않지만 서버로 전달이 필요한 경우에 사용한다. EX)주문번호, 상품번호 등
+            -->
+    </form>
+
+    <br><br><br>
+    <hr>
+    <br><br><br>
+
+    <h2>파일 태그</h2>
+
+    <pre>
+
+    </pre>
+
+    <form action="filezzz" method="get">
+        <input type="file" name="f" accept=".png, .jpg">
+        <br><br>
+        <input type="submit" >
+    </form>
+
+    <br><br><br>
+    <hr>
+    <br><br><br>
+
+    <h2>버튼 태그</h2>
+
+   <pre>
+       버튼은 기본적으로 버튼의 역할을 한다. (그냥 누를 수 있는)
+       근데, 폼태그 내에서 버튼은 제출 역할을 한다. 
+       버튼을 그냥 만들면, form 태그 내에서는
+       type이 submit으로 지정된다.
+
+       일반버튼(<button type ="button">일반버튼</button>  || <button>일반버튼</button>은) 어디서든 존재할 수 있지만,
+       서브밋버튼(<button type="submit">서브밋버튼</button> + <input type="submit">서브밋버튼<input>) 과 
+       리셋버튼(<button type="reset">리셋버튼</button> + <input type="reset">리셋버튼<input>)
+       은 폼태그 안에서만 존재한다. 
+
+       즉, form 태그 내에서 button 태그는 submit 을 기본값으로 가진다. 
+        <form action="zzz">
+
+        <button>로그인</button> /*즉 -> <button type="button">로그인</button>인데 form 태그 안에서는 이 <button>태그가 */
+        <input type="submit" value="로그인"></input>가 된다. -> 폼태그 안에서는 윗줄보다 이렇게 쓰는 것이 권장됨.
+
+        </form>
+       위의 두개는 같은 의미이다
+
+       리셋은, form 태그 내의 input 태그들의 value를 초기화한다.
+   </pre>
+        <form action="buttonzzz" method="get">
+            <input type="text">
+            <br>
+            <button>일반버튼</button>
+            <button type="submit">버튼태그로만든제출버튼 </button>
+            <br>
+            <button type="reset">버튼태그로만든리셋버튼</button>
+            <br>
+            <input type="button" value="인풋태그로만든버튼">
+            <br>
+            <input type="submit">
+        </form>
+    
+        <button onclick="alert('zzz');">폼태그 밖 버튼은 일반버튼임</button>
+
+
+        <br><br><br>
+        <hr>
+        <br><br><br>
+
+        <h2>셀렉트 박스</h2>
+        <pre>
+            셀렉트 박스는,
+            목록에서 값을 선택해서 서버로 전달한다.
+
+            select - option 은
+            option 태그의 content 영역에
+            서버로 넘길 데이터를 넣어줄 수 있다.
+            (value 속성을 이용해서 지정도 가능하다.)
+
+            option 태그에 selected 속성을 추가하면
+            기본적으로 선택이 되어있게 할 수 있다.
+
+        </pre>
+
+        <form action="selectzzz" method="get">
+            <select name="s">
+                <option value="kor">한국</option>
+                <option value="usa">미국</option>
+                <option value="ch">미국</option>
+                <option value="jp">일본</option>
+                <option value="u" selected>우크라이나</option>
+            </select>
+            <br>
+            <input type="submit">
+        </form>
+
+        <br><br><br>
+        <hr>
+        <br><br><br>
+
+        <h2>데이터 리스트</h2>
+
+        <pre>
+            목록에서 값을 선택하거나,
+            직접 입력해서 서버로 데이터를 넘겨줄 수 있다.
+        </pre>
+
+        <form action="datalistzzz" method="get">
+
+            <input type="text" name="f" list="fruit" >
+            <datalist id="fruit">
+                <option>사과</option>
+                <option value="banana">바나나</option>
+                <option value="grape">포도</option>
+            </datalist>
+
+            <br>
+            <input type="submit">
+        </form>
+
+        <br><br><br>
+        <hr>
+        <br><br><br>
+
+        <h2>여러줄의 텍스트 받기</h2>
+        <pre>
+
+        </pre>
+
+        <form action="textzzz" method="get">
+
+            <textarea name="ta" id="" cols="30" rows="20" >
+
+            </textarea>
+
+            <br>
+            <input type="submit">
+
+        </form>
+
+
+    <ul>
+        <li>1번째요소</li>
+        <li>2번째요소</li>
+        <li>
+            <ul>
+                <li>사과</li>
+                <li>바나나</li>
+            </ul>
+
+        </li>
+        <li>4번째요소</li>
+        <li>5번째요소</li>
+    </ul>
+
+
+</body>
+</html>

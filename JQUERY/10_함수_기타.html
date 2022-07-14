@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>함수_기타</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .st-1{background-color: red;}
+        .st-2{background-color: blue;}
+        .st-3{background-color: green;}
+    </style>
+</head>
+<body>
+    <h1>함수_기타</h1>
+
+    <script>
+        $(function(){
+            const arr = ['a','b','c','d','e'];
+
+            //1. for in
+            // for(let i in arr){
+            //     console.log(i + ":::"+ arr[i]);
+            // };
+
+            //2. each(jQuery)
+            // $.each(arr, function(a,b){
+            //     console.log(a + ":::" + b);
+            // });
+
+            //3. each(jQuery)
+            // $(arr).each(function(a,b){
+            //     console.log(a + ":::" + b);
+            // });
+
+            // const obj = 
+            // {
+            //     name : 'lar',
+            //     age : 24
+            // };
+
+            // for(let i in obj){
+            //     console.log(i + ":::" + obj[i]);
+            // }
+
+            // $.each(obj,function(a,b){
+            //     console.log(a + ":::" + b);
+            // });
+
+        });
+    </script>
+
+    <hr>
+
+    <div id="area1">
+        <h1 class="test">1</h1>
+        <h1>2</h1>
+        <h1>3</h1>
+    </div>
+
+    <script>
+        $(function(){
+            //area1 안의 h1 태그를 가져와서, 각각 st-1, st-2, st-3 클래스 부여하기
+            const arr = $('#area1').children();
+
+            arr.each(function(idx,elem){
+                //요소마다 다른 색깔 부여
+
+                //jQuery 방법
+                // $(elem).addClass('st-' + (idx+1));
+
+                // children().eq()로 분류하고 addClass()해도 됨
+                // $('#area1').children().eq(0).addClass('st-1');
+                // $('#area1').children().eq(1).addClass('st-2');
+                // $('#area1').children().eq(2).addClass('st-3');
+                for(let i = 0; i <  $('#area1').children().length; i++){
+                    $('#area1').children().eq(i).addClass('st-' + (i+1));
+                }
+
+                //js 방법
+                // elem.className = elem.className += ' st-' + (idx+1);
+
+                // x = 1;
+                // elem.className = elem.className += ' st-' + x;
+                // x++;
+
+            })
+
+        });
+    </script>
+
+    <h1>is 함수</h1>
+
+    <div id="isTest"></div>
+
+    <div class="isTest01"></div>
+    <div class="isTest02"></div>
+
+    <script>
+        $(function(){
+            // console.log($('div'));
+
+            // var result = $('div').eq(0).is('.isTest');
+            // console.log(result);
+
+            // var result = $('div').eq(1).is('.isTest');
+            // console.log(result);
+
+            $('div').each(function(idx, elem){
+                console.log(elem);
+                if($(elem).is('.isTest')){
+                    console.log('통과');
+                }
+            });
+            
+        });
+
+
+
+
+
+            //현재 문서의 div 요소 중, 
+            //class 가 isTest01 또는 isTest02 에 해당하는 요소만 출력
+            
+        $(function(){
+            $('div').each(function(idx, elem){
+                if($(elem).is('isTest01') || $(elem).is('isTest02')){
+                    console.log(elem);
+                    //elem을 this로 해도된다.
+                }
+            });
+
+        });
+
+           
+
+         </script>
+            
+            
+        </body>
+</html>

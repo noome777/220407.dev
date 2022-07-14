@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>요소선택(기본선택자)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1>기본선택자</h1>
+
+    <hr>
+
+    <h3>아이디 선택자</h3>
+    <p>
+        특정 고유한 아이디값을 가진 요소 하나만을 선택하고자 할 때
+    </p>
+
+    <div id="test1"></div>
+
+    <script>
+        //JS로 가져오는 방식
+        
+
+        //Jquery로 가져오는 방식
+        $('#test1').css('width', '100px');
+        $('#test1').css('height', '100px');
+        $('#test1').css('backgroundColor', 'gray');
+        $('#test1').html('<h1>hello</h1>');
+        // $('#test1').text('ㅋㅋㅋ텍스트변경');
+    </script>
+
+
+    <h3>태그 선택자</h3>
+
+    <p>사과</p>
+    <p>자두</p>
+
+    <h4>자</h4>
+    <h5>축</h5>
+    <h6>인</h6>
+    <h4>묘</h4>
+    
+
+    <ul>
+        <li class="test-class01">안녕</li>
+        <li>클레오</li>
+        <li>파트라</li>
+    </ul>
+
+    <script>
+        //여러개의 요소들을 가져와서 한 번에 배경색 변경
+        $('p, h4, h5, h6, .test-class01, ul>li:last-child').css('backgroundColor', 'blue');
+    </script>
+
+    <hr>
+
+    <h1 class="item">value1</h1>
+    <h1 class="item select">value2</h1>
+    <h1 class="item select">value3</h1>
+
+    <script>
+        // window.onload = function(){
+
+        //} 이거 대신에 다음 거
+
+        $(function(){
+            $('.select').css('backgroundColor', 'skyblue');
+            $('.select').click(function(){
+                console.log(".select 요소 클릭됨 ...");
+            });
+        });
+    </script>
+
+
+ 
+
+
+</body>
+</html>

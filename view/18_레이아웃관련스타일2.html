@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>레이아웃관련스타일2</title>
+
+    <style>
+        body {
+            background-color: gray;
+        }
+        
+        .box {
+            border: 1px solid black;
+        }
+
+        #first {
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+        }
+
+        #second {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            position: absolute;
+            /*absolute는 부모를 기준으로 움직인다. 기존 공간을 비워줘서 그 자리에 다른 요소들이 올 수 있게 함. 요소를 1층에서 2층으로 띄워버린다.*/
+            top: 50px;
+            left: 50px;
+        }
+
+        #third {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            /*absolute는 (부모 기준점을 잡고 요소를 움직이고 싶을 때 사용.)
+            <****static(기본값)이 아닌 가장 가까운 조상**** 
+            ex)absolute, relative, fixed>을 기준을 한다.
+            이때 부모가 static이면 윗단계 부모로 올라가고 올라가다가
+            body까지 도달하면 이때 body는 static을 상관하지 않고 기준을 잡는다.*/
+            top: 100px;
+            left: 100px;
+        }
+
+        .outer {
+            position: relative;/*relative는 자기 자신을 기준으로 움직인다. 기존 공간도 차지해서 다른 요소들이 그 자리에 올 수 없음.*/
+            border: 1px solid black;
+
+        }
+
+        #fixed-area {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: fixed; /*--> 스크롤 내리면 고정됨 네이버 검색창, 다크모드와 같은 기능*/
+        }
+        
+        .z-test {
+            border: 1px solid black;
+            width: 170px;
+            height: 120px;
+            position: absolute;/*absolute를 주면 outer에 존재하지 않고 1,2,3번째 요소가 한군데로 뭉쳐짐 세개가 최상단으로 가서
+            따라서 outer는 자식요소들의 높이를 인지하지 못하기 때문에 높이가 0인 위테두리만 남아있게 된다.*/
+        }
+
+        #z1 {
+            background-color: yellow;
+            top: 100px;
+            left: 100px;
+            z-index: 10; /*z-index를 통해 원하는 순서대로 쌓아줄 수 있다.*/
+        }
+
+        #z2 {
+            background-color: green;
+            top: 50px;
+            left: 50px;
+            z-index: 8;
+        }
+
+        #z3 {
+            background-color: red;
+            z-index: -10;
+        }
+
+        .vis-test {
+            border: 1px solid red;
+        }
+
+        .float-test {
+            border: 1px solid black;
+            width: 70px;
+            height: 30px;
+            float: left;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <h1>레이아웃관련스타일2</h1>
+
+    <br><br><br><hr><br><br><br>
+
+    <br><br><br> <br><br><br> 
+
+    <h2>배치관련 스타일</h2>
+    <h3>position : 상대위치(relative) 와 절대위치(absolute)</h3>
+
+    <div class="outer">
+        <div class="box" id="first">1번자식</div>
+        <div class="box" id="second">2번자식</div>
+        <div class="box" id="third">3번자식</div>
+    </div>
+
+    <br><br><br><hr><br><br><br>
+
+    <h2>position : 고정위치(fixed)</h2>
+    <div class="box" id="fixed-area"></div>
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <h2>z-index : 요소들을 index 값에 따라 쌓는 속성</h2>
+
+    <div class="outer" > <!--테두리, position : relative-->
+        <!-- .z-test#z${$번째요소}*3 -->
+        <div class="z-test" id="z1">1번째요소</div>
+        <div class="z-test" id="z2">2번째요소</div>
+        <div class="z-test" id="z3">3번째요소</div>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><hr><br><br><br>
+
+    <h3>
+        visibility : 특정요소를 보이거나 안보이게 하는 스타일 속성
+    </h3>
+
+    <div class="vis-test" style="width:100px; height:100px; background-color:색상;">1번영역</div>
+    <div class="vis-test" style="width:100px; height:100px; background-color:색상; visibility: hidden;">2번영역</div> /*display:none은 아예 공간도 없어진다.*/
+    <div class="vis-test" style="width:100px; height:100px; background-color:색상;">3번영역</div>
+   
+   <pre>
+       visibility : hidden 은 공간은 차지함. 안보임. 
+       display : none 은 공간도 사라짐 (화면에 안보임)
+   </pre>
+   
+   <br><br><br><hr><br><br><br>
+
+   <h2>float</h2>
+   <p>
+       페이지 내의 요소들을 띄워서
+       왼쪽 또는 오른쪽으로 배치하는 속성 (float도 기존 공간을 차지함 )
+       (반대로 앱솔루트는 기존 공간을 비워줘서 그 자리에 다른 요소들이 올 수 있게 함)
+       앱솔루트와 플로트모두 최상단으로 요소가 뜨지만, 두개가 같이 있을 때는 앱솔루트가 더 위에온다.
+    </p>
+   
+    <div class="float-test">요소1번</div>
+    <div class="float-test">요소2번</div>
+    <div class="float-test">요소3번</div>
+    <div class="float-test">요소4번</div>
+    <div class="float-test">요소5번</div>
+
+    <br><br><br><br><br>
+
+    <div class="box" style="width: 100px; height: 100px; float: left;">
+        float된 div
+    </div> 
+
+    <br clear="left">
+
+    <div>111</div>
+    <div>222</div>
+    <div>333</div>
+    <div>444</div>
+    <div>555</div>
+
+   <br clear="left">
+   <div>디브추가함 111</div>
+   <div>디브추가함 222</div>
+   <div>디브추가함 333</div>
+   <div>디브추가함 444</div>
+   <div>디브추가함 555</div>
+   <hr>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <!-- <br><br><br><hr><br><br><br> -->
+</body>
+</html>

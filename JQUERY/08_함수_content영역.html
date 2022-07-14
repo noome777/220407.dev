@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수_content영역</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1>함수_content영역</h1>
+
+
+    <h3>html()</h3>
+    <h3>text()</h3>
+
+
+    <h5 id="t1"><a>안녕</a></h5>
+    <h5 id="t2">empty</h5>
+
+    <script>
+        $(function(){
+            // var result = $('#t1').html();
+            // var result = $('#t1').text();
+            // console.log(result);
+
+            //a 태그 href 에 네이버 링크 걸기
+            // $('#t1').children().attr('href', 'http://www.naver.com');
+
+            //#t1 요소의 content 영역 바꾸기
+            // $('#t1').html('제이쿼리로바꾼내용 html()로 바꿈');
+            // $('#t1').text('제이쿼리로바꾼내용 text()로 바꿈');
+
+
+        });
+    </script>
+
+
+    <div class="test"><span>원래내용</span></div>
+    <div class="test">원래내용</div>
+    <div class="test">원래내용</div>
+
+    <script>
+        $(function(){
+            // $('.test').html('<h1>테스트</h1>');
+
+            //html(콜백함수) 
+            //콜백함수의 파라미터로 인덱스와 기존의 content 내용을 받을 수 있다.
+            $('.test').html(function(idx, content){
+                console.log(a);
+                console.log(b);
+                return '<h1>콜백함수테스트</h1>';
+            });
+        });
+
+    </script>
+
+
+
+
+
+    
+
+
+
+
+</body>
+</html>
