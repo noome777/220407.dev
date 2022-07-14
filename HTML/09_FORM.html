@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>폼 태그</title>
+</head>
+<body>
+    
+
+    <h1>form 태그</h1>
+    <hr>
+    <h2>회원가입</h2>
+    <pre>
+        form 태그
+        action 속성 : 요청을 보낼 주소(url)
+        method 속성 : 요청을 보낼 방식
+
+        form 태그는,
+        key, value 쌍으로 묶어서 데이터를 전송
+
+        key 는 input 태그의 name 으로 설정됨
+        value 는 input 태그에 입력한 값(value)
+    </pre>
+
+
+
+    <!-- 메소드를 헤드에 담아서 보내면 get (헤드에 아디 비번 다 보임)
+         바디에 담아서 보내면 post (바디에 전달되니까 헤드에 아디비번 안보임)
+    -->
+    <form action="memberLogin" method="post">
+
+        아이디 :
+         <input type="text" name="id" value="user000">
+        <br>
+        비밀번호 :
+         <input type="password" name="pwd" required>
+        <br>
+        <input type="submit">
+    </form>
+
+    <br><br><br>
+    <hr>
+    <br><br><br>
+
+ 
+
+
+
+</body>
+</html>

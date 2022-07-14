@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>상태선택자</title>
+
+    <style>
+        input[type=checkbox]:checked {
+            width: 30px;
+            height: 30px;
+        }
+
+        input[type=checkbox]:checked + label {
+            font-size: 30px;
+
+        }
+
+        #focus-test:focus {
+            background-color: gray;
+
+        }
+
+        button {
+            border: 10px solid black;
+        }
+
+        button:disabled {
+            border: 10px solid red;
+        }
+        
+        input[type=password] {
+            background-color: blue;
+
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1>상태 선택자</h1>
+
+    <hr>
+
+    <pre>
+        요소의 상태에 따라서 선택되는 선택자
+    </pre>
+
+
+    <h2>체크된 상태의 요소</h2>
+
+    <input type="checkbox" id="apple">
+    <label for="apple">사과</label>
+
+    <input type="checkbox" id="banana">
+    <label for="banana">바나나</label>
+
+
+    <br><br><br><hr><br><br><br>
+
+    <h2>focus 상태의 input 요소</h2>
+    <input id="focus-test" type="text">
+
+    <br><br><br><hr><br><br><br>
+
+    <h2>활성화/비활성화 요소 선택</h2>
+
+
+    아이디 : <input type="text" id="userId">
+    <br>
+    비밀번호 : <input type="password" disabled>
+
+    <br>
+    <br>
+    <button>버튼01</button>
+    <br><br>
+    <button disabled>버튼02</button>
+
+
+</body>
+</html>

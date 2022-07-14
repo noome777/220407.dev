@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>실습3</h1>
+
+    <h2>상품 갯수 입력</h2>
+
+    개당가격 :  <input type="number" name="price">
+    <br>
+    <input type="number" name="count"> 개 
+    <hr>
+    <button onclick="calc();">계산</button>
+    <hr>
+    <input type="number" name="total"> 원
+
+
+    <script>
+        function calc() {
+            //개당가격과 개수 가져오기
+            var price = document.querySelector('input[name=price]').value;
+            var count = document.querySelector('input[name=count]').value;
+
+            //위의 두개 곱하기
+            var total = parseInt(price) * parseInt(count);
+
+            //결과창에 결과 보여주기
+            document.querySelector('input[name=total]').value = total;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>목록관련스타일</title>
+    <style>
+        #target {
+            /* list-style-image: url("../HTML/resources/images/image01.jpg"); */
+            list-style-type: none;
+            list-style-type: square;
+            list-style-type: circle;
+            list-style-type: disc;
+            
+        }
+
+        ol {
+            list-style: decimal-leading-zero;
+            list-style: lower-alpha;
+            list-style: upper-alpha;
+            list-style: lower-roman;
+            list-style: upper-roman;
+        }
+
+        .list-class {
+            /*ul, ol 공통 적용 가능*/
+            list-style-position: outside;
+            list-style-position: inside;
+        }
+
+
+    </style>
+</head>
+
+
+
+<body>
+    <h1>목록관련스타일</h1>
+
+    <br><br><br>
+    <hr>
+    <br><br><br>
+
+    <ul id="target"class="list-class">
+        <li>1번째</li>
+        <li>2번째</li>
+        <li>3번째</li>
+    </ul>
+
+    <!-- ol>li{$번째요소}*3-->
+        <ol class="list-class">
+            <li>1번째요소</li>
+            <li>2번째요소</li>
+            <li>3번째요소</li>
+        </ol>
+        
+
+
+
+</body>
+</html>

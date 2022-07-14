@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>요소선택</h1>
+
+    <pre>
+        document.querySelecter('선택자');
+        document.querySelecterAll('선택자');
+
+        document.getElementById("아이디");
+        document.getElementsByClassName("클래스명");
+        document.getElementsByTagName("태그명");
+
+    </pre>
+
+    <div id="target">타겟 div</div>
+
+    <div class="box">1번박스</div>
+    <div class="box">2번박스</div>
+    <div class="box">3번박스</div>
+
+    <input type="text">
+    <input type="password"> 
+
+    <script>
+        var target = document.querySelector('#target'); /*현재 문서에서 아이디가 타겟인 걸 가져오겠다.*/
+        console.log(target);
+
+        //첫번째 .box요소
+        var box01 = document.querySelector('.box');
+        var boxArr = document.querySelectorAll('.box');
+        console.log(box01);
+        console.log(boxArr);
+        //input태그인데, password type인요소
+        var inputpwd = document.querySelector('input[type=password]');
+        console.log(inputpwd);
+    </script>
+
+    <script>
+        console.log("=============================");
+        var target = document.getElementById("target");
+        console.log(target);
+
+        var boxArr = document.getElementsByClassName("box");
+        console.log(boxArr);
+        console.log(boxArr[0]);
+        console.log(boxArr[5]);
+        
+        /*div의 모든 요소들이 출력됨*/
+        var divArr = document.getElementsByTagName('div');
+        console.log(divArr);
+
+    </script>
+</body>
+</html>

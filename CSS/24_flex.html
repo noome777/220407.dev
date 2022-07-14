@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #outer {
+            border: 3px dashed red;
+            background-color: gray;
+            height: 200px; /*item 은 기본적으로 container의 높이를 따라간다. 근데 아이템의 높이를 따로 주면 컨테이너 높이를 안 따라간다.*/
+            width: 500px;
+            display: flex;
+            flex-direction: row;/*이게 row라면 메인축은 row 교차축은 column */
+            flex-wrap: wrap;
+
+            /*메인축 기준 아이템 정렬 
+            (justify-content는 아이템 사이 여백 지정)*/
+
+            /* justify-content: space-evenly;  */
+            /*space-between 은 공간 사이의 너비를 똑같이 하고
+            space-around 는 마진의 너비를 똑같이 한다.
+            spance-evenly는 양쪽 끝을 먼저 맞춰주고 나머지를 양쪽 끝과 똑같이 맞춰준다.*/
+
+            /*교차축 기준 아이템 정렬 
+            (align-items는 conatainer를 기준으로 아이템을 위에 아래에 center에 배치할 건지 지정)*/
+            
+            /* align-items: center; */
+
+            /* wrap인 경우(nowrap이면 의미 없음), 
+            여러줄이 된 아이템 정렬*/
+            align-content: space-between;
+
+
+        }
+
+        #outer > div {
+            background-color: skyblue;
+            width: 100px;
+            border: 1px solid black;
+        }
+
+        #inner1 {
+            order: 10;
+        }
+
+        #inner2 {
+            align-self: center;
+            order: 3;
+            order: 5;
+        }
+        #inner3 {
+            order: 7;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>flex</h1>
+
+    <hr>
+
+    <div id="outer">
+        <div id="inner1">1</div>
+        <div id="inner2">2</div>
+        <div id="inner3">3</div>
+        <div id="inner3">4</div>
+        <div id="inner3">5</div>
+        <div id="inner3">6</div>
+        <div id="inner3">7</div>
+    </div>
+
+</body>
+</html>

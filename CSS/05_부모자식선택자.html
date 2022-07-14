@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+    div {
+        width: 100px;
+        height: 200px;
+        border: 1px solid black;
+    }
+
+    div > ul + ol li span{
+        background-color: sred;
+    }
+
+    </style>
+</head>
+<body>
+    
+    <h1>부모 자식 형제 선택자</h1>
+    
+    <pre>
+        자식 vs 자손
+        자식 : 바로 하위 요소
+        자손 : 하위 모든 요소
+
+        자식 : > 를 이용해서 선택
+        자손 : 공백을 이용해서 선택
+        형제 : +,~ 로 선택
+                + : 바로 뒤의 요소
+                ~ : 뒤의 모든 요소
+        자식, 자손에 * 도 사용 가능
+
+    </pre>
+
+    <div id="outer">
+        <ul>
+            <li>첫번째</li>
+            <li>두번째</li>
+            <li>세번째</li>
+        </ul>
+
+
+        <ol>
+            <li>첫번째</li>
+            <li><span>스팬</span></li>
+            <li>세번째</li>
+        </ol>
+    </div>
+
+
+
+</body>
+</html>

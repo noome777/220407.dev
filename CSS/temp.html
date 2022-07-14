@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+        .box{
+            border: 3px solid black;
+            width: 200px;
+            height: 200px;
+        }
+        #t1 {
+            border: 3px solid red;
+            width: 200px;
+            height: 210px;
+            position: relative;
+        }
+
+        #t2 {
+            border: 3px solid blue;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 235px;
+           
+        }
+        
+
+        #t3 {
+            border: 3px solid green;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top:340px;
+            left:110px;
+        }
+
+        #t {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+
+        #t td{
+            border: 5px solid blue;
+        }
+        .red {background-color: red;}
+        .blue {background-color: blue;}
+        .green {background-color: green;}
+        .purple {background-color: purple;}
+        .orange {background-color: orange;}
+
+
+
+        .float-left {float: left;}
+        .float-right{float: right;}
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    
+    <h1>테스트</h1>
+
+    <br><br><br><hr><br><br><br>
+
+
+    <div class="box" id="t1"></div>
+    <div class="box" id="t2"></div>
+    <div class="box" id="t3"></div>
+
+
+    <br><br><br><hr><br><br><br>
+
+
+    <table id="t">
+        <tr>
+            <td><div class="box">1</div></td>
+            <td><div class="box">2</div></td>
+        </tr>
+        <tr>
+            <td><div class="box">3</div></td>
+            <td><div class="box">4</div></td>
+        </tr>
+    </table>
+
+    
+    <br><br><br><hr><br><br><br>
+
+    <h2>float 테스트</h2>
+
+    <div class="box red float-left"></div>
+    <div class="box blue"></div>
+    <div class="box green"></div>
+    <div class="box purple"></div>
+    <div class="box orange"></div>
+</body>
+</html>

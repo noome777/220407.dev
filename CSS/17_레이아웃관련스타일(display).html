@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>레이아웃관련스타일(display)</title>
+
+    <style>
+        .display-test {
+            border : 1px solid black;
+            width: 150px;
+            height: 150px;
+        }
+
+        .red{background-color: red;}
+        .yellow{background-color: yellow;}
+        .pink{background-color: pink;}
+        .green{background-color: green;}
+        .blue{background-color: blue;}
+
+        .inline {
+            display: inline;
+        }
+
+        .inline-block {
+            display: inline-block;
+        }
+
+        .block {
+            display: block;
+        }
+
+        .font-size-zero {
+            font-size: 40px; /*0px일 시에는 인라인블록 공백사라짐*/
+        }
+    </style>
+
+</head>
+<body>
+    
+    <h1>레이아웃관련스타일(display)</h1>
+
+    <br><br><br><hr><br><br><br>
+
+    <h2>display : 화면 배치 방법 변경</h2>
+
+    <pre>
+        선택자 {
+            display : inline | block | inline-block
+        }
+    </pre>
+    
+    <h3>display : inline</h3>
+    <!-- .display-test.inline{$번DIV}*5 -->
+    <div class="display-test inline red">1번DIV</div>
+    <div class="display-test inline yellow">2번DIV</div>
+    <div class="display-test inline green">3번DIV</div>
+    <div class="display-test inline pink">4번DIV</div>
+    <div class="display-test inline blue">5번DIV</div>
+    
+    <br>
+
+    <b>display: inline을 하게 되면, width와 height 속성은 적용되지 않음</b>
+
+    <br><br><br><hr><br><br><br>
+
+    <h3>display : inline-block</h3>
+    <div class="font-size-zero">
+        <div class="display-test inline-block red">1번DIV</div>
+        <div class="display-test inline-block yellow">2번DIV</div>
+        <div class="display-test inline-block green">3번DIV</div>
+        <div class="display-test inline-block pink">4번DIV</div>
+        <div class="display-test inline-block blue">5번DIV</div>
+        
+    </div>
+    <br>
+    <b>
+        엔터키 있으면 공백 생김
+    </b>
+
+    <br><br><br><hr><br><br><br>
+
+    <h3>display : block</h3>
+    <!--span 태그를 block 요소로 바꾸기-->
+    <span class="display-test block red">1번SPAN</span>
+    <span class="display-test block yellow">2번SPAN</span>
+    <span class="display-test block green">3번SPAN</span>
+    <span class="display-test block blue">4번SPAN</span>
+    <span class="display-test block pink">5번SPAN</span>
+</body>
+</html>

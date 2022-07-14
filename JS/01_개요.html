@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS 개요</h1>
+
+    <pre>
+        원하는 요소를 가져와서,
+        원하는 동적인 작업을 할 수 있게 해준다. 
+
+        스타일, 이벤트, 데이터 처리
+
+        script 태그 안쪽에 작성하면 됨
+        script 태그는 head 에 있어도 되고,
+        body에 있어도 되고,
+        외부에 있어도 됨
+
+        script 태그 여러개 작성해도 됨
+
+        JS 에서는, 문자열을 표시할 때
+        큰따옴표, 작음따옴표 모두 가능하다. 
+        (JS 에서, character 타입은 없음)
+
+        JS 는 none-type 언어이다. (var x = 10;)
+        세미콜론도 안 써도 된다. 
+
+        var, let, const
+        로 변수를 선언할 수 있다. (let을 사용하는 경우가 가장 많음)
+        (let 은 재선언 불가능, 재할당 가능
+        const 는 재선언 불가능, 재할당 불가능-> 자바에서의 final과 똑같음 재할당(assignment) 불가능한 면이)
+    </pre>
+
+    <script>
+        //system.out.println("hello world");
+        console.log("hello world")
+        // alert("hello world ! ");
+
+        let x = 10;
+        console.log(x);
+
+        x = 20;
+        console.log(x);
+
+        let a = 100;
+        let b = 200;
+        let c = 3.14;
+        let d = 'hello';
+        let e = 'world';
+        let f = true;
+
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        console.log(d);
+        console.log(e);
+        console.log(f);
+
+        console.log(typeof a);
+        console.log(typeof b);
+        console.log(typeof c);
+        console.log(typeof d);
+        console.log(typeof e);
+        console.log(typeof f);
+    </script>
+
+</body>
+</html>

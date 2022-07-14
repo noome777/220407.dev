@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>실습2</h1>
+
+    <input type="number" name="num1">
+    +
+    <input type="number" name="num2">
+    =
+    <input type="number" name="result">
+    <br>
+    <button onclick="calc();">계산</button>
+
+    <script>
+        function calc(){
+            //num1과 num2를 가져오기
+            var num1 = document.querySelector('input[name=num1]').value;
+            var num2 = document.querySelector('input[name=num2]').value;
+            // console.log(typeof num1);
+            //두 숫자 더하기
+            var result = parseInt(num1) + parseInt(num2);
+            //결과창에 결과 보여주기
+            document.querySelector('input[name=result]').value = result;
+        }
+    </script>
+</body>
+</html>

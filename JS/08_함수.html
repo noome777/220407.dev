@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>함수</h1>
+
+    <script>
+
+        f01(10,20,30,40,50,60);
+        function f01(num1, num2, num3) {
+            console.log("f01 called ...")
+            console.log("num1 : " + num1)
+            console.log("num2 : " + num2)
+            console.log("num3 : " + num3)
+        }
+
+        var f02 = function(num1,num2){
+            console.log("이름없는 함수 호출됨...")
+            console.log(num1);
+            console.log(num2);
+            return num1+num2
+        }
+        var result1 = f02(100,200); 
+        /*변수에다가 함수를 담아주면 호출을 먼저할 수 없고 선언이후에 호출해줘야한다.*/
+        var f03 = f02;
+        var result2 = f03(111,222);
+
+        console.log(result1);
+        console.log(result2);
+
+        
+    </script>
+</body>
+</html>

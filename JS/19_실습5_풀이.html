@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    #wrap {
+        width: 300px;
+        height: 500px;
+        border: 1px solid black;
+    }
+    #result{
+        height: 100px;
+        border: 10px solid green;
+        box-sizing: border-box;
+    }
+    #result>input {
+        height: 100px;
+        width: 100%;
+        background-color: lightgray;
+        box-sizing: border-box;
+
+    }
+    #keypad>div {
+        width: 100px;
+        height: 100px;
+        border: 1px solid red;
+        box-sizing: border-box;
+    }
+    #keypad {
+        display: flex;
+        flex-wrap: wrap; /*박스 내의 사이즈에 알맞게 랩을 씌워줌*/
+    }
+    input{
+        border: 0;
+        padding: 0;
+    }
+</style>
+<body>
+    <div id="wrap">
+        <div id="result">
+            <input type="text">
+        </div>
+        <div id="keypad">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>&lt;</div>
+            <div>0</div>
+            <div>OK</div>
+        </div>
+    </div>
+
+    <script>
+        var btnArr = document.querySelector("#keypad>div");
+
+        for(var i = 0; i < btnArr.length; i++){
+            var btn = btnArr[i];
+            console.log(btn);
+            btn.addEventListener('click', function(a){
+                console.log("클릭됨!")
+                console.log(a.target.textContent);
+                var value = a.target.textContent;
+                if(value == 'OK'){
+                
+                } else if(value = '<'){
+                    //한글자 지우기
+                    var str = document.querySelector('#result>input').value;
+                    document.querySelector('#result>input').value
+                                             = str.substring(0, str.length-1);
+                } else {
+                document.querySelector('#result>input').value += value;
+                }
+            });
+          
+        }
+
+    </script>
+</body>
+</html>

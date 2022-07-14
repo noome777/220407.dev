@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>트랜지션</title>
+    <style>
+        .box {
+            border: 3px solid red;
+            width: 100px;
+            height: 100px;
+        }
+
+        #t01:hover {
+            background-color: blue;
+            width: 100%;
+            transition: 2s;
+            transition-delay: 1s;
+            transition-timing-function: steps(2);
+        }
+
+        #t02:hover {
+            background-color: plum;
+            /* transform: rotate(45deg); */
+            /* transform: rotate(720deg); */
+            /* transform: rotateX(45deg); */
+            transform: rotateY(180deg);
+            transition: 3s;
+        }
+
+        #t03:hover {
+            transform: scale(2);
+            /*이거 서브메뉴 선택할 때 마우스 올리면 메뉴 커지는걸로 하면 좋을듯*/
+            /* transform: scaleX(2); */
+            transform: skew(30deg);
+            transform: scale(2) skew(60deg) rotate(90deg);
+        }
+    
+    </style>
+</head>
+<body>
+    
+    <h1>트랜지션</h1>
+
+    <br><br><br><hr><br><br><br>
+    
+    <div class="box" id="t01"></div>
+
+    <br><br><br><hr><br><br><br>
+
+    <h1>트랜스폼</h1>
+
+    <div class="box" id="t02"></div>
+
+    <h1>스케일</h1>
+
+    <div class="box" id="t03"></div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>

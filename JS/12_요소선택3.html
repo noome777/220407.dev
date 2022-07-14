@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소선택3</title>
+    <style>
+        .red{
+            background-color: red;
+        }
+        .blue {
+            background-color: blue;
+        }
+        .box {
+            border: 5px dashed green;
+        }
+        .box-outer {
+            border: 5px dashed pink;
+        }
+    </style>
+</head>
+<body>
+    <h1>요소선택3</h1>
+
+    <div id="outer" class="red box-outer">
+        <div class="box">1번박스</div>
+        <div class="box">2번박스</div>
+        <div class="box">3번박스</div>
+        그냥글자
+    </div>
+
+    <div id="span-outer">
+        여기는 스팬 위쪽
+        <span id="hello">안녕하세요</span>
+        여기는 스팬 아래쪽
+    </div>
+
+    <script>
+        var outer = document.querySelector("#outer");
+        console.log(outer);
+        console.log(outer.childElementCount);
+        console.log(outer.getAttribute('id'));
+        console.log(outer.getAttribute('class'));
+
+        var str = outer.getAttribute('class');
+        // alert(str);
+        str = str.replace('red', 'blue');
+        // alert(str);
+
+        outer.setAttribute("class", str);
+        console.log(outer.getAttribute('class'));
+        outer.removeAttribute('class');
+        console.log(outer.getAttribute('class')); //->null
+
+        var spanOuter = document.getElementById('span-outer');
+        var text = spanOuter.innerText;
+        console.log(text); //div 안쪽에 있는 모든 텍스트를 출력
+
+        var html = spanOuter.innerHTML;
+        console.log(html); //div 안쪽에 있는 모든 html을 출력(태그도 포함)
+
+        spanOuter.innerHTML = "<h1>에이치원</h1>"
+        spanOuter.innerHTML += "<h1>에이치원</h1>" //스팬태그 유지됨
+        // spanOuter.innerText = "<h1>에이치원</h1>" ->이걸로 하면 태그 적용 안됨.
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

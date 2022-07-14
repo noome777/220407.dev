@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장객체</title>
+</head>
+<body>
+    <h1>내장객체</h1>
+
+    <hr>
+
+    <h2>Object 객체</h2>
+    <p>
+        자바스크립트의 가장 기본적인 내장 객체 <br>
+
+    </p>
+
+    <button id="btn1">실행 확인</button>
+
+    <hr>
+
+    <h2>Number 객체</h2>
+    <p>
+        정수 , 실수 저장하는 객체
+    </p>
+
+    <button id="btn2">실행 확인</button>
+
+    <hr>
+
+    <script>
+        var result = Number(1);
+        var result = new Number(1);
+    </script>
+
+    <h2>String 객체</h2>
+    <p>
+        문자열을 저장하는 객체 <br>
+        HTML 요소와 관련된 여러 메소드 제공
+    </p>
+
+    <button id="btn3">실행 확인</button>
+
+    <hr>
+
+    <h2>Date 객체</h2>
+    <p>
+        날짜와 시간정보를 저장하는 객체
+    </p>
+    <button id="btn4">실행 확인</button>
+
+    <script>
+        var date1 = new Date();
+        var date2 = new Date(12345678912345);
+        var date3 = new Date('2022/01/01/20:06');
+        var date4 = new Date('2022-01-01T20:06');
+        var date5 = new Date(2022,07,01,20,07,30);
+
+        console.log(date1);
+        console.log(date2);
+        console.log(date3);
+        console.log(date4);
+        console.log(date5);
+        console.log(date5.getHours());
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="06_내장객체.js"></script>
+    
+</body>
+</html>

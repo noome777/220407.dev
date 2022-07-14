@@ -1,0 +1,1 @@
+console.log("test2.js 에서 출력됨...");

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>레이아웃관련스타일</title>
+
+    <style>
+        .size-test {
+            border: 10px solid red;
+
+        }
+
+        #test1 {
+            width: 400px; /*content는 400이지만 테두리 포함하면 420임*/
+            height: 200px;
+        }
+
+        #test2 {
+            width: 50%; /*화면 크기가 달라지면 맞춰서 달라진다*/
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    
+    <!--
+        블럭요소 
+            한 줄로 영역을 차지하는 요소 
+            줄바꿈 발생
+            div, p, pre, h$
+        인라인요소
+            content 부분만 영역을 차지하는 요소
+            옆으로 배치
+            span, label, input, img, 글자관련
+        요소영역 == padding, content, border, margin
+    -->
+
+    <h1>레이아웃관련스타일</h1>
+
+    <br><br><br><hr><br><br><br>
+
+    <h3>width, height</h3>
+
+    <hr>
+
+    <h4>고정크기(px)</h4>
+    <div id="test1" class="size-test">고정DIV 컨텐츠</div>
+
+    <h4>가변크기(%)</h4>
+    <div id="test2" class="size-test">가변DIV 컨텐츠</div>
+
+
+
+</body>
+</html>

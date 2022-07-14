@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>요소추가</h1>
+
+    <div id="outer">
+        아우터 시작
+        <div id="inner">
+            이너 시작
+            <span id="target">
+                여기는 스팬 ㅎㅎ
+            </span>
+            이너 종료
+        </div>
+        아우터 종료
+    </div>
+
+    <script>
+        
+        var target = document.querySelector('#target');
+        var inner = document.querySelector('#inner');
+        var outer = document.querySelector('#outer');
+
+        //자바스크립트를 사용하여 엘리먼트 요소 이동시키는 방법
+
+        // inner.appendChild(target); --> 요소만 허용
+        // outer.appendChild('zzzz');
+
+        // outer.append('zzzz'); --> 요소, 문자열 등 모두 허용
+        // outer.append(target);
+
+        // outer.prepend(target);
+        // outer.insertBefore(target);
+
+        var h1 = document.createElement('h1');
+        var temp = document.createTextNode('JS에서만든텍스트노드');
+        h1.appendChild(temp);/*어떤 요소의 자식으로 집어 넣는 것*/
+        console.log(h1);
+        console.log(temp);
+
+        console.log('=========================');
+        var result01 = document.body.appendChild(h1); //리턴 ㅇㅇ
+        console.log(result01);
+        var result02 = document.body.append(h1); //리턴 ㄴㄴ
+        console.log(result02);
+
+
+
+
+    </script>
+</body>
+</html>

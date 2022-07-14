@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 개요</title>
+    <style>
+        .area {
+            border: 1px solid black;
+            width: 300px;
+            height: 100px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>자바스크립트 개요</h1>
+
+    <!--
+        웹 브라우저에서 많이 사용되는 인터프리터 방식의 스크립트 언어
+        - 인터프리터 방식 : 컴파일 없이, 실행하면서 코드를 하나씩 해석
+        (번역을 미리 하는 게 아니고 실시간으로 번역하므로, 코드에 오류가 있어도 실행시점이 되어야 알 수 있다.)
+    -->
+    
+    <h3>1. 자바스크립트 사용법</h3>
+
+    <h4>inline 인라인 방식</h4>
+    <!--
+        태그 내에 직접 코드를 작성하는 방법
+
+        (코드가 짧을 경우 사용 -> div onclick)
+    -->
+
+    
+    <button onclick="alert('버튼 클릭됨');">알람 실행</button>
+    <button onclick='console.log("콘솔출력 버튼 클릭됨");'>콘솔 출력</button>
+
+
+    <h4>internal 내부 방식</h4>
+    <!--
+        script 태그 영역에 함수 단위로 소스코드 작성
+        이벤트 발생 시, 해당 함수 호출
+
+        (script 태그 영역에, 소스코드 작성)
+    -->
+    <button onclick="abc();">알람 버튼</button>
+    <button id="btn1">콘솔 출력</button>
+
+    <script>
+        function abc(){
+            alert('abc 함수 호출됨');
+        }
+
+        // button 요소(객체) 가져오기 (id를 이용해서)
+        var btn1 = document.getElementById('btn1');
+        console.log(btn1);
+
+        btn1.onclick = function(){
+            console.log("콘솔출력 버튼 클릭됨");
+        }
+    </script>
+
+    <h4>external 외부 방식</h4>
+
+    <!--
+        별도의 js 파일로 작성해서 html 에 가져다 사용
+        js 양이 많거나, 중복코드가 있을 경우 사용
+    -->
+
+    <button onclick="external();">console 출력</button>
+
+    <script src="01_개요.js"></script>
+    
+    <h3>데이터 입출력</h3>
+    <h4>1. 데이터 입력</h4>
+    <!--
+        window.confirm();
+        - yes or no 답변을 필요로 할 때 사용
+        - true or false 값이 리턴됨
+    -->
+
+    <button onclick="checkConfirm();">confirm</button>
+
+    <script>
+        function checkConfirm() {
+            console.log('일단 출력 ㅎㅎ')
+
+            // var result = ;
+            if(window.confirm('메세지 ㅎㅎ') == true){
+                console.log('확인을 누름');
+            } else {
+                console.log('취소를 누름');
+            }
+        }
+    </script>
+
+    <!--
+        window.prompt();
+        - 텍스트 필드, 확인, 취소 버튼이 있는 대화상자 띄움
+        - 입력한 내용을 리턴받음
+    -->
+
+    <button onclick="checkPrompt();">prompt</button>
+
+    <script>
+        function checkPrompt() {
+            var name = prompt("당신의 이름은?")
+            console.log(name);
+
+            if(name != null && name.trim() != ''){
+                alert(name + '님 환영합니다 !! ㅎㅎ');
+            }
+        }
+    </script>
+
+    <h4>2. 데이터 출력</h4>
+    <!--
+        console.log
+        alert
+        document.write
+        innerHTML
+    -->
+
+    <script>
+        document.write('<strong>document.write() 로 작성한 내용 !!!</strong>');
+    </script>
+
+    <div id="div01"><span>여기는 div01의 콘텐츠 영역</span></div>
+    <button onclick="checkInnerHTML();">innerHTML 이용해서 출력</button>
+    <script>
+
+        function checkInnerHTML() {
+            //div 가져오기
+            var div01 = document.getElementById('div01');
+            //가져온 div를 출력하기
+            console.log(div01);
+            console.log(div01.innerHTML); //실제로 태그까지 모두 출력됨
+            console.log(div01.innerText); //태그는 안 나오고 텍스트만 나옴
+
+            //div의 내용 바꾸기
+            // div01.innerHTML = 'JS로 InnerHTML 바꿈 ㅎㅎ';
+            // div01.innerText = 'JS로 innerText 바꿈 ㅎㅎ';
+
+            //버튼을 누를 때마다 JS로 InnerHTML 바꿈 ㅎㅎ가 추가되게
+            div01.innerHTML += '<br> JS로 InnerHTML 바꿈 ㅎㅎ';
+        }
+    </script>
+
+    <hr><hr><hr>
+    <h3>3. HTML 요소에 접근하기</h3>
+
+    <h4>1) 아이디로 접근</h4>
+    <button onclick="accesId();">아이디로 요소 가져오기</button>
+    <div id="area01" class="area"></div>
+    <script>
+        function accesId() {
+            var area01 = document.getElementById('area01');
+            
+            area01.style.backgroundColor = 'red';
+            console.log(area01.style);
+
+
+        }
+    </script>
+
+    <h4>2) 클래스로 접근</h4>
+    <button onclick="accessClassName();">클래스로 요소 가져오기</button>
+    <div class="area test-class"></div>
+    <div class="area test-class"></div>
+    <div class="area test-class"></div>
+
+    <script>
+        function accessClassName() {
+            var arr = document.getElementsByClassName('test-class'); 
+            //겟엘바클네임은 배열객체들!을 리턴한다. !!!!!!!!!
+
+            
+            // arr[0].style.backgroundColor = "rgb(" + red + "," + green + "," + blue +")";
+            // arr[1].style.backgroundColor = "rgb(" + red + "," + green + "," + blue +")";
+            // arr[2].style.backgroundColor = "rgb(" + red + "," + green + "," + blue +")";
+            
+            //반복문으로 변경하기
+            for(var i = 0; i < arr.length; i++){
+                var red = parseInt(Math.random() *255) + 1; //0 - 255
+                var green = parseInt(Math.random() *255) + 1; //0 - 255
+                var blue = parseInt(Math.random() *255) + 1; //0 - 255
+ 
+                // arr[i].style.backgroundColor = 
+                // "rgb(" + red + "," + green + "," + blue +")";
+
+                //달러 사인을 사용하려면 ``백틱을 사용해야한다.
+                arr[i].style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+            }
+        
+        
+        }
+    </script>
+
+    <h4>3) 태그명으로 접근</h4>
+    <h4>4) name 으로 접근</h4>
+    <button onclick="accessName();">name 으로 요소 가져오기</button>
+    <br>
+    <input type="checkbox" name="food" value="chicken"><label>치킨</label>
+    <input type="checkbox" name="food" value="pizza"><label>피자</label>
+    <input type="checkbox" name="food" value="hamburger"><label>햄버거</label>
+    <div id="food-result"></div>
+    <script>
+       function accessName(){
+        var arr = document.getElementsByName('food');
+        var foodResult = document.getElementById('food-result');
+        foodResult.innerText = "";
+        //s로 되어있으니 요소들을 배열로 가져온다.
+        for(var i = 0; i < arr.length; i++){
+            console.log(arr[i].checked);
+            console.log(arr[i].value);
+            // console.log(arr[i].name);
+            // console.log(arr[i].type);
+
+            if(arr[i].checked == true){
+                //결과 영역에 value 넣기
+                // foodResult.innerText += arr[i].value +" / ";
+                foodResult.innerHTML += arr[i].value +" / &nbsp";
+            }
+        }
+       }
+    </script>
+
+
+
+    <h4>text 박스의 value 읽기</h4>
+
+    <button onclick="readUserId();">읽기 !</button>
+    <input type="text" name="userId" placeholder="아이디를 입력하세요">
+
+    <script>
+        function readUserId(){
+            var userId = document.getElementsByName('userId')[0];
+            console.log(userId.value);
+            var v = userId.value;
+            v = '초기화';
+        }
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

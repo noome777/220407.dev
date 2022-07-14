@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div-test {
+            border: 1px solid;
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+        #area {
+            border: 1px solid;
+            width: 300px;
+            height: 200px;
+            margin-top: 5px;
+            justify-content: ;
+        }
+        td {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+
+
+
+    <!--
+        getElementById 를 제외한
+        ByClassName, ByTagName, ByName 은 모두
+        객체가 바로 나오는 게 아니라 객체 배열의 형태로 
+        리턴되므로 인덱스를 활용하여 데이터를 꺼내온다 !
+    -->
+
+
+
+
+    <h1>개요 실습 문제</h1>
+
+    <hr>
+
+    <h2>문제 1. 색상 조절하기</h2>
+
+    <p>
+        색상 선택 후 변경 버튼을 클릭하면 색상이 변경되도록 만들기
+    </p>
+
+    <div id="div1" class="div-test"></div> 
+    <input id="selectColor" type="color">
+    <button onclick="changeColor();">변경</button>
+
+    <script>
+        function changeColor(){
+            var div1 = document.getElementById('div1');
+            var color = document.getElementById('selectColor').value;
+            
+            div1.style.backgroundColor = color;
+        }
+    </script>
+
+<hr>
+    <h2>문제 2. 크기 변경하기</h2>
+    <p>
+        버튼에 따라 크기 조절이 가능하도록 만들기
+    </p>
+    <div id="div2" class="div-test"></div>
+    <button onclick="setSize('1');" id="1">50X50</button>
+    <button onclick="setSize('2');" id="2">원본(100X100)</button>
+    <button onclick="setSize('3');" id="3">200X200</button>
+
+    <script>
+        function setSize(id){
+            // //div2 가져오기
+            // var div2_width = document.getElementById('div2').style.width;
+            // var div2_height = document.getElementById('div2').style.height;
+            // //사이즈 조절하기 50 x 50 으로
+            // div2.style.height = div2_height;
+            // div2.style.width = div2_width;
+
+            //풀이
+            var div2 = document.getElementById('div2');
+            if(id == '1'){
+                div2.style.width = '50px';
+                div2.style.height = '50px';
+            }
+
+            else if(id == '2'){
+                div2.style.width = '100px';
+                div2.style.height = '100px';
+            }
+
+            else if(id == '3'){
+                div2.style.width = '200px';
+                div2.style.height = '200px';
+            }
+        }
+    </script>
+
+<hr>
+
+    <h2>문제 3. HTML 태그에 접근</h2>
+    <p>
+        텍스트 박스로 입력받은 데이터를 가져와서 출력하기 <br>
+        (단, 구매자는 태그이름, 상품명은 아이디, 구매 가격은 name값으로 접근)
+    </p>
+
+    <label>구매자 : <input type="text" placeholder="구매자의 이름을 입력하세요."></label> 
+
+    <br><br>
+
+    <label>상품명 : <input type="text" id="pName" placeholder="구매 상품명을 입력하세요."></label>
+
+    <br><br>
+
+    <label>가격 : <input type="text" name="price" placeholder="구매 가격을 입력하세요."></label>
+
+    <br><br>
+
+    <button onclick="printValue();">입력값 출력하기</button>
+
+    <div id="area"></div>
+
+    <script>
+        function printValue(){
+            var area = document.getElementById('area');
+            var name = document.getElementsByTagName('input')[1].value;
+            var pName = document.getElementById('pName').value;
+            var price = document.getElementsByName('price')[0].value;
+
+            area.innerHTML = `${name}님 구매상품은 ${pName}, 구매가격은 ${price}원 입니다.`
+            buyerArr[0].value
+        }
+    </script>
+
+    <hr>
+
+    <h2>문제 4. 테이블 만들기</h2>
+    <p>
+        prompt()로 사용자로부터 행과 열의 개수를 입력받아 테이블 만들기 <br>
+        아래의 div 태그에 innerHTML 속성을 사용해서 만들어진 테이블 포함한다.
+    </p>
+
+    <button onclick="makeTable();">테이블 생성</button>
+
+    <div id="div3" style="margin-top: 10px;"></div>
+
+    <script>
+        function makeTable() {
+            var row = prompt('테이블의 행의 개수는?'); 
+            var col = prompt('테이블의 열의 개수는?');
+            //이하 내용 작성
+            var count = 1;
+            var table = '<table border="1">';
+                
+                for(var i = 0; i < row; i++){
+                    table += '<tr>';
+                    
+                    for(var j = 0; j < col;  j++){
+                            // table += '<td>' + count + '</td>';
+                            table += '<td>lar</td>';
+                            // table += `<td>${count}</td>`;
+                            count++;
+                        }
+
+                     table += '</tr>';
+                }
+                table += '</table>'
+
+                document.getElementById('div3').innerHTML = table;
+        }
+    </script>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

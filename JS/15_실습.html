@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>실습</h1>
+
+    
+        <input type="text" name="id" required placeholder="아이디"  /*value="admin"*/>
+        <br>
+        <input type="password" name="pwd" required placeholder="비밀번호">
+        <br>
+        <button onclick="login();">로그인</button>
+        <!-- <button onclick="console.log('btn clicked...'); alert('zzzz')">로그인</button> -->
+       
+        
+
+
+        <script>
+            // var inputId = document.querySelector('input[name=id]');
+            // console.log(inputId);
+            // console.log(inputId.type);
+            // console.log(inputId.name);
+            // console.log(inputId.value);
+            // console.log(inputId.required);
+            
+            
+            
+            //로그인을 눌렀을 때 , 아이디가 4글자 이상이 아니라면, 알람띄우기
+            //로그인을 눌렀을 때, 비밀번호가 4글자 이상이 아니라면, 알람띄우기
+            
+            function login(){
+                var Id = document.querySelector('input[name=id]').value;
+                var Pwd = document.querySelector('input[name=pwd]').value;
+
+                if((Id.length < 4 || Pwd.length < 4)) {
+                alert("아이디는 4글자 이상으로 입력해주세요.");
+                }
+            }
+
+        </script>
+
+    
+</body>
+</html>

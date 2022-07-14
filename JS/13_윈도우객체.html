@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>윈도우객체</h1>
+
+    <script>
+        // window.alert("안녕");
+        // var name = prompt("당신의 이름은?");
+        // var result = confirm(name + "님 맞으시죠?");
+        // alert(result);
+
+        console.log(window);
+        console.log(window.screen);
+
+        console.log(window.location);
+        var href = window.location.href;
+        console.log(href);
+        
+        // var result = confirm("네이버로 이동하시겠습니까?");
+        // if(result){
+        //     window.location.href = 'https://www.naver.com';
+        // }
+
+        //사용자가 입력한 url로 이동하게 만들기
+        var str = window.prompt("어디로 이동할까요?");
+        if(str.startsWith("https://") || str.startsWith("http://")){
+            window.location.href = str;
+        } else {
+            window.location.href = "https://" + str;
+        }
+    </script>
+</body>
+</html>

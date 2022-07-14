@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>연습</title>
+    <style>
+        #menubar {
+            background-color: gray;
+            width: 200px;
+            height: 200px;
+        }
+
+        #menubar:hover {
+            background-color: green;
+
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>환영합니다 !</h1>
+
+    <div id="menubar">
+        여기는 메뉴바
+    </div>
+
+    <script>
+       console.log("hello world");
+    //    var input = prompt();
+    //    alert(input)
+    // var d = document.querySelector('#menubar');
+    // var d = document.getElementById('menubar');
+    var d = document.getElementsByTagName('div')[0];
+    console.log(d);
+
+
+    d.addEventListener('click', func01);
+
+    function func01(){
+        alert('함수01 호출됨...');
+        d.style.backgroundColor = "skyblue";
+    }
+    </script>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

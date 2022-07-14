@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+</head>
+<body>
+    <h1>함수</h1>
+
+    <hr>
+
+
+
+
+    <h2>1. 함수 선언</h2>
+
+    <h3>1) 선언적 함수</h3>
+    <p>
+        function 키워드에 함수명 작성하여 '선언'
+    </p>
+
+    <button onclick="test1();">실행 확인</button>
+
+
+
+
+    <h3>2) 익명 함수</h3>
+    <p>
+        함수명을 작성하지 않고 변수에 '대입'
+    </p>
+
+    <button id="btn1">익명 함수 실행</button>
+
+
+
+
+    <h3>3) 자동 실행 함수</h3>
+    <p>
+        함수 정의와 동시에 즉시 실행되는 함수
+        <br>
+        한번만 호출 가능
+    </p>
+
+
+
+
+    <h3>4) 화살표 함수 (Arrow Function)</h3>
+    <pre>
+        ES6 에 추가된 함수
+
+        [문법]
+            - 매개 변수가 없을 때 : () => {...}
+            - 매개 변수가 하나 일 때 : x => {...}
+            - 매개 변수가 두 개 이상일 때 : (x,y) => {...}
+
+            - 리턴
+                - 처리할 라인이 여러개 라면, {}로 감싸서 처리
+                (x,y) => {
+                    ... 
+                    return x+y;
+                }
+                -처리할 라인이 하나라면, {}와 return 생략 가능
+                (x,y) => x+y;
+    </pre>
+
+    <hr>
+
+    <h2>2. 함수의 매개 변수</h2>
+
+    <h3>1) 매개 변수</h3>
+    <p>
+        함수 실행에 필요한 값을 외부에서 함수로 전달할 때, 매개변수를 통해서 매개값을 전달한다.
+        <br>
+        함수를 호출할 때, 매개변수의 갯수만큼 전달하는 것이 일반적이지만,
+        그렇지 않은 경우에도 에러가 발생하지 않는다.
+    </p>
+
+    <h3>2) arguments</h3>
+    <p>
+        초과된 매개값이나, 가변인자 전달 시 사용
+    </p>
+
+    <button id="btn2">가변 인자 테스트</button>
+
+    <hr>
+
+    <h2>3. 함수의 리턴</h2>
+    <h3>1) 일반적인 값 리턴</h3>
+
+    <h3>2) 익명함수를 리턴하는 함수</h3>
+
+    <button id="btn3">익명함수 리턴 테스트</button>
+
+
+
+
+
+    
+
+    <script src="04_함수.js"></script>
+</body>
+</html>

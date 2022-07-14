@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>선택자</title>
+    <style>
+        /* -> 모든 요소 선택 이게 CSS주석임*/
+        * {
+            background-color: gray;
+        }
+
+        h1 {
+            background-color: beige;
+        }
+
+        h1 {
+            background-color: aqua;
+        }
+
+        .hello {
+            background-color: darkred;
+        }
+     
+        #hi {
+            background-color: blueviolet;
+        }
+
+        h2 {
+            background-color: blue;
+        }
+
+        .bye {
+            background-color: coral;
+        }
+        
+
+        .hello, .bye, #hi {
+            background-color: green;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    
+    <h1>선택자</h1>
+
+    <br><br><br>
+    <hr>
+    <br><br><br>
+
+    <h2>요소를 선택하는 방법</h2>
+
+    <pre>
+        * : 모든 요소 선택
+        # : id 로 요소 선택
+        . : class 로 요소 선택
+        태그명을 이용해서 선택
+        ","를 이용해서 여러개 동시 선택 가능
+
+
+
+        <우선순위>
+        id > class > tagname
+
+        클래스는 띄어쓰기를 이용해서
+        여러개를 부여할 수 있다. 
+
+        클래스와 아이디를 동시에 부여할 수 있다. 
+
+        -클래스 선택자 :
+        다른 태그와 중복 가능
+
+        -아이디 선택자 :
+        고유한 값 작성할 것
+    </pre>
+
+    <h2 id="first" class="hello bye">안녕하세요</h2>
+    <h2 class="hello bye">안녕하세요</h2>
+    <h2 class="hello">안녕하세요</h2>
+    <h2>안녕하세요</h2>
+    <h2 id="hi">안녕하세요</h2>
+
+
+
+</body>
+</html>
